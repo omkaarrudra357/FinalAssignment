@@ -1,0 +1,16 @@
+<h1>Login </h1>
+<form name="Data Form" #userData="ngForm" (ngSubmit)='verify(userData)'>
+    Name: <input type="text" name="Name" ngModel required><br><br>
+    Password: <input type="password" name="Password" ngModel required><br><br>
+    <input type="submit" value="submit">&nbsp;&nbsp;
+    <!--<input type="button" value="Show Data" (click)='verify(userData)'>&nbsp;&nbsp;-->
+  </form> 
+  <table>
+    <tr>
+      <th>User Name</th>
+      <th>Password</th>
+    </tr>
+    <tr *ngFor="let user of userList1"><td>{{user.userid}}</td><td>{{user.password}}</td><td>{{user.email}}</td></tr>
+  </table>
+  
+<router-outlet></router-outlet>

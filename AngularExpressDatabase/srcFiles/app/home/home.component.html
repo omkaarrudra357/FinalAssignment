@@ -1,0 +1,24 @@
+
+<h1>Login Page</h1>
+<h3>Enter User Data</h3>
+<form name="TemplateForm" #userData="ngForm" (ngSubmit)='addUser(userData)'>
+  User Name : <input type="text" name="userid" ngModel required /><br><br>
+  Password : <input type="password" name="password" ngModel required /><br><br>
+  Email ID : <input type="text" name="email" ngModel required /><br><br>
+  <input type="submit" value="Add User" [disabled]="!userData.valid" />&nbsp;&nbsp;
+  <input type="button" value="Get User" (click)="getAllUsers()" />&nbsp;&nbsp;
+  <input type="button" value="Modify User" (click)="updateUser(userData)" />&nbsp;&nbsp;
+  <input type="button" value="Delete User" (click)="deleteUser(userData)" />&nbsp;&nbsp;
+</form><br>
+<table>
+  <tr>
+    <th>User Name</th>
+    <th>Password</th>
+    <th>Email ID</th>
+  </tr>
+  <tr *ngFor="let user of userList"><td>{{user.userid}}</td><td>{{user.password}}</td><td>{{user.email}}</td></tr>
+</table>
+<br>
+<br><br>
+<hr>
+<router-outlet></router-outlet>
